@@ -1,0 +1,153 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+
+.container {
+    width: 1250px;
+    height: 800px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid gray;
+}
+
+.game-content {
+    width: 75%;
+    height: 100%;
+    position: relative;
+    background: rgb(37,40,74);
+    background: radial-gradient(circle, rgba(37,40,74,1) 48%, rgba(3,6,40,1) 100%);
+    border-right: 1px solid gray;
+}
+
+.game-aside {
+    width: 25%;
+    height: 100%;
+    background: rgb(3,6,40);
+}
+
+.zygmunt {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    z-index: 1;
+}
+
+.uklad-zelazo-wegiel {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.game-form {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    z-index: 10;
+}
+
+.game-form label {
+    width: 750px;
+    min-height: 60px;
+    box-sizing: border-box;
+    padding: 4px 20px;
+    color: #ffffff;
+    background: rgb(60,88,159);
+    background: linear-gradient(0deg, rgba(60,88,159,1) 29%, rgba(9,37,110,1) 71%);
+    border-radius: 30px;
+    border: 2px solid #dfd7d7;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.answer-container {
+    width: 750px;
+}
+
+.answer {
+    width: 372px;
+    min-height: 40px;
+    color: #ffffff;
+    background: rgb(60,88,159);
+    background: linear-gradient(0deg, rgba(60,88,159,1) 29%, rgba(9,37,110,1) 71%);
+    border-radius: 30px;
+    border: 2px solid #dfd7d7;
+    margin-bottom: 5px;
+}
+
+.answer:nth-child(3),
+.answer:last-child {
+    margin-bottom: 0;
+}
+
+.answer:hover,
+.answer:focus {
+    background: yellow;
+    background: linear-gradient(0deg, yellow 29%, greenyellow 71%);
+    color: #000000;
+    cursor: pointer;
+}
+
+.game-aside form {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.demission {
+    width: 280px;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.options {
+    width: 70px;
+    height: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.ranking {
+    margin-top: 45px;
+}
+
+.ranking ol {
+    font-size: 19px;
+    color: #ffffff;
+    list-style-position: inside;
+    padding-left: 30px;
+}
+
+.ranking ol li {
+    margin-bottom: 13px;
+    position: relative;
+}
+
+.ranking ol li span {
+    position: absolute;
+    left: 60px;
+}
+
+.special-info {
+    color: gold;
+}
+
+
