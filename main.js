@@ -12,50 +12,51 @@ class Model {
      * array by given random number
      */
     getQuestion() {
-        let questionIndex = this._randomNumber();
+        let questionIndex = this._drawNumber();
 
-        console.log(this.questions[questionIndex].correct);
+        if (questionIndex !== -1) {
+            return this.questions[questionIndex];
+        }  else {
+            return null;
+        }
     }
 
-    /*
-     * TODO: create a method that draw a number from set of given
-     * objects array
-    */
     _drawNumber() {
-
-    }
-
-    /*
-     * TODO: create a method that check if the question were asked
-     * and returns an array which is set of these objects.
-    */
-    _checkIfAsked() {
-
-    }
-
-    //TODO: divide this into several methods as above
-    _randomNumber() {
-        let set = [];
         let index;
 
-        this.questions.forEach(question => {
-           if (!question.asked) {
-               set.push(question.id);
-           }
-        }, this);
+        if (this._checkIfAsked().length) {
+            let drawnNumber = Math.floor(Math.random() * this._checkIfAsked().length);
 
-        if (set.length !== 0) {
-            let number = Math.floor(Math.random() * set.length);
-
+            /*
+                Map function in this case create a new array contains all
+                the questions id.
+                IndexOf function here returns the smallest array returned by map()
+                item index where this item value is equal to value given as indexOf()
+                parameter which is one specific element drawn from the set of questions
+                where their asked property is false.
+                So index variable is the index of drawn questions id array item.
+            */
             index = this.questions.map(question => {
                 return question.id;
-            }, this.questions).indexOf(set[number]);
+            }, this.questions).indexOf(this._checkIfAsked()[drawnNumber]);
 
             this.questions[index].asked = true;
         } else {
             index = -1;
         }
         return index;
+    }
+
+    _checkIfAsked() {
+        let setOfQuestionsId = [];
+
+        this.questions.forEach(question => {
+            if (!question.asked) {
+                setOfQuestionsId.push(question.id);
+            }
+        }, this);
+
+        return setOfQuestionsId;
     }
 }
 
@@ -69,4 +70,4 @@ class Controller {
 
 
 let app = new Model();
-console.log(app.getQuestion());
+console.log(app.getQuestion().correct);

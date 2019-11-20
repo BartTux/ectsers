@@ -19,7 +19,7 @@ body {
 }
 
 .game-content {
-    width: 75%;
+    width: 938px;
     height: 100%;
     position: relative;
     background: rgb(37,40,74);
@@ -28,7 +28,7 @@ body {
 }
 
 .game-aside {
-    width: 25%;
+    width: 312px;
     height: 100%;
     background: rgb(3,6,40);
 }
